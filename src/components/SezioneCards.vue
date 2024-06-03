@@ -23,7 +23,7 @@
   </script>
 
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid ps-5 mb-5">
     <img class="position-absolute top-50 start-100 translate-middle" src="../assets/maxcoach-shape-13-150x150.png" alt="">
     <div class="mt-5 text-center">
       <h2 class="melody">Artist Coaching</h2>

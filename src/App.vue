@@ -1,9 +1,13 @@
 <script>
 import SezioneCards from './components/SezioneCards.vue';
+import SezioneGetStarted from './components/SezioneGetStarted.vue';
+import SezioneYoutube from './components/SezioneYoutube.vue';
 export default {
 
   components: {
     SezioneCards,
+    SezioneGetStarted,
+    SezioneYoutube,
   },
   data() {
     return {
@@ -23,6 +27,8 @@ export default {
 <template>
     <Main>
       <SezioneCards />
+      <SezioneGetStarted />
+      <SezioneYoutube />
     </Main>
 </template>
 
