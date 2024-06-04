@@ -39,8 +39,12 @@
   .melody {
     color: #1972F5;
     font-size: 40px;
+    font-family: myFirstFont;
   }
-  
+  @font-face {
+    font-family: myFirstFont;
+    src: url(/public/Rossela-Demo.ttf);
+  }
   .card-section {
     display: flex;
     flex-wrap: wrap;

@@ -10,7 +10,7 @@
   </section>
 </template>
 
-<style scoped>
+<style scoped>  
 section {
   padding-top: 5rem;
 }
@@ -34,7 +34,7 @@ section {
   background-image: url('../assets/artist-video-poster.jpg');
   background-size: cover; 
   background-position: center; 
-  transition: transform 0.3s ease; 
+  transition: transform 1s ease; 
 }
 
 .background-container:hover::before {
