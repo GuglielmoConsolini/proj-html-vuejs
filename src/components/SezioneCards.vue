@@ -37,7 +37,7 @@
   
   <style>
   .melody {
-    color: #1972F5;
+    color: #6AC5f1;
     font-size: 40px;
     font-family: myFirstFont;
   }
