@@ -31,8 +31,9 @@ export default {
       <div v-for="(card, index) in images"
        :key="index" class="image-box" 
        :class="{ 'current': index === currentIndex,
-                 'adjacent': index === currentIndex - 1 || index === currentIndex + 1 || (currentIndex === 0 && index === images.length - 1) || (currentIndex === images.length - 1 && index === 0),
-                 'hidden': index !== currentIndex && index !== currentIndex - 1 && index !== currentIndex + 1 && (currentIndex !== 0 || index !== images.length - 1) && (currentIndex !== images.length - 1 || index !== 0)}">
+       'adjacent': index === currentIndex - 1 || index === currentIndex + 1 || (currentIndex === 0 && index === images.length - 1)
+       || (currentIndex === images.length - 1 && index === 0),
+        }">
         <div class="text-container">
           <h3 class="card-title">{{ card.alt }}</h3>
           <p class="card-description"> {{ card.text }}</p>
@@ -69,6 +70,9 @@ section{
   justify-content: space-around;
   margin: 0 auto;
   display: flex;
+  flex-wrap: nowrap;
+  
+  overflow-x: auto;
 }
 .image-box.current{
   opacity: 1;
@@ -82,12 +86,13 @@ section{
 .image-box {
   background-color: #FFFFFF;
   overflow: hidden;
-  width: 350px;
+  width: calc(98vw / 3);
   height: 350px;
   text-align: left;
   position: relative;
   transition: opacity 0.3s;
   padding-left: 1.5rem;
+  flex-shrink: 0;
 }
 .img-container {
   width: 70px;
@@ -124,7 +129,7 @@ section{
   height: 15px;
   width: 15px;
   margin: 0 5px;
-  background-color: gray;
+  background-color: lightskyblue;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;

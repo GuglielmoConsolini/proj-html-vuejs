@@ -24,21 +24,63 @@
 
 <template>
   <div class="container-fluid ps-5 mb-5">
-    <img class="position-absolute top-50 start-100 translate-middle" src="../assets/maxcoach-shape-13-150x150.png" alt="">
+    <div class="shape5">
+      <img src="../assets/artist-shape-02-600x324.png" alt="">
+    </div>
+    <div class="shape4">
+      <img src="../assets/maxcoach-shape-05-150x150.png" alt="">
+    </div>
+    <div class="shape3">
+      <img src="../assets/maxcoach-shape-14-1536x343.png" alt="">
+    </div>
+    <div class="shape2">
+      <img src="../assets/artist-shape-01.png" alt="">
+    </div>
     <div class="mt-5 text-center">
       <h2 class="melody">Artist Coaching</h2>
       <h2>I understand what it takes to create.<br>I can help you with</h2>
     </div>
-    <section class="card-section mt-5">
+    <section class="card-section">
+      <div class="shape1">
+       <img src="../assets/maxcoach-shape-13-150x150.png" alt="">
+    </div>
       <Card v-for="(card, index) in cards" :key="index" :image="card.image" :title="card.title" :description="card.description"/>
     </section>
   </div>
 </template>
   
   <style>
+  .shape1{
+    position: absolute;
+    right: -115px;
+    top: -100px;
+    z-index: 10;
+  }
+  .shape2{
+    position: absolute;
+    transform: rotate(220deg);
+    left: -100px;
+    top: 40px;
+    z-index: 10;
+  }
+  .shape3{
+    position: absolute;
+    z-index: 3;
+    left: 0;
+  }
+  .shape4{
+    position: absolute;
+    bottom: 0;
+  }
+  .shape5{
+    position: absolute;
+    top: -40px;
+    right: -250px;
+    transform: rotate(40deg);
+  }
   .melody {
     color: #6AC5f1;
-    font-size: 40px;
+    font-size: 50px;
     font-family: myFirstFont;
   }
   @font-face {
@@ -51,5 +93,10 @@
     gap: 30px;
     justify-content: center;
     padding: 10px;
+    position: relative;
+    
+    width: 90%;
+    margin: auto;
+    margin-top: 8rem;
   }
   </style>

@@ -20,6 +20,7 @@ export default {
 .card {
   padding: 10px;
   max-width: 300px;
+  z-index:1;
 }
 .card img {
   width: 50%;
