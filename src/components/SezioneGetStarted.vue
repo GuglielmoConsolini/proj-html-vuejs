@@ -4,19 +4,21 @@
 
 <template>
   <div class="container-fluid d-flex ">
+    <!-- **SEZIONE SINISTRA** -->
     <div class="left">
       <div class="row">
-       <div class="col-12 text-center pb-5">
-        <img src="../assets/artist-quote-icon.png" alt="">
-       </div>
-       <div class="col-12 text-center d-flex justify-content-center ps-5">
-        <h1 class="coach">I coach and mentor visual artists, like you, to Create Like You Mean It</h1>
-       </div>
-       <div class="col-12 text-center">
-        <h2 class="melody text-center mt-4">Martin Garrix</h2>
-       </div>
+        <div class="col-12 text-center pb-5">
+          <img src="../assets/artist-quote-icon.png" alt="">
+        </div>
+        <div class="col-12 text-center d-flex justify-content-center ps-5">
+          <h1 class="coach">I coach and mentor visual artists, like you, to Create Like You Mean It</h1>
+        </div>
+        <div class="col-12 text-center">
+          <h2 class="melody text-center mt-4">Martin Garrix</h2>
+        </div>
       </div>
     </div>
+    <!-- **SEZIONE DESTRA** -->
     <div class="right pt-5">
       <div class="row justify-content-center pt-4">
         <div class="text-row">
@@ -51,6 +53,8 @@
     width: 70%;
     margin-left: 2rem;
   }
+
+  /* ***STILE PER GESTIRE IL BUTTON*** */
   button {
    padding: 1rem 2rem;
    border: none; 
@@ -61,6 +65,7 @@
   h5{
     color:#EF6F31 ;
     transition: color 1s;
+    padding-top: 5px;
   }
   button:hover { 
     background-color: #EF6F31; 

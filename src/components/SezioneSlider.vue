@@ -10,30 +10,59 @@ export default {
     return {
       currentIndex: 1,
       images: [
-        { name: 'Mina Hollace',role:'Freelance', src: img1, alt: 'High level of efficency and scientific teaching methods', text: 'I am free to learn on my own pace, follow my own schedule an choose the subject i want to learn from the syllabus,Great study portal for people like me' },
-        { name: 'Mina Hollace',role:'Freelance', src: img2, alt: 'High level of efficency and scientific teaching methods', text: 'I am free to learn on my own pace, follow my own schedule an choose the subject i want to learn from the syllabus,Great study portal for people like me' },
-        { name: 'Mina Hollace',role:'Freelance', src: img3, alt: 'High level of efficency and scientific teaching methods', text: 'I am free to learn on my own pace, follow my own schedule an choose the subject i want to learn from the syllabus,Great study portal for people like me' },
-        { name: 'Mina Hollace',role:'Freelance', src: img4, alt: 'High level of efficency and scientific teaching methods', text: 'I am free to learn on my own pace, follow my own schedule an choose the subject i want to learn from the syllabus,Great study portal for people like me' }
+      { name: 'Mina Hollace', role: 'Freelance', src: img4, alt: 'High level of efficiency and scientific teaching methods', text: 'I am free to learn at my own pace, follow my own schedule and choose the subject I want to learn from the syllabus. Great study portal for people like me.' },
+      { name: 'Madley Pondor', role: 'Freelance', src: img1, alt: 'Professional team of specialists and passionate mentor at reach', text: 'I need to get a certification for english profiency and MaxCoach is my best choice. Their tutors are smart and professional when dealing with students' },
+      { name: 'Florence Themes', role: 'Multimedia admin', src: img2, alt: 'it is a choice of quality for people with special needs ', text: 'I am a very strict person so i require everything to be organized and neat. then i will be able to do things right and shineo. MaxCoach guys just got me.' },
+      { name: 'Luvic Dubble', role: 'Private tutor', src: img3, alt: 'The MaxCoach team works really hard to ensure top quality', text: 'I am happy with their arrangment of lessons and subjects. They reflect a scientific investigation into effective methods to be adopted for learners of all levels.' },
+      { name: 'Mina Hollace', role: 'Freelance', src: img4, alt: 'High level of efficiency and scientific teaching methods', text: 'I am free to learn at my own pace, follow my own schedule and choose the subject I want to learn from the syllabus. Great study portal for people like me.' },
+      { name: 'Madley Pondor', role: 'IT Specialist', src: img1, alt: 'Professional team of specialists and passionate mentor at reach', text: 'I need to get a certification for english profiency and MaxCoach is my best choice. Their tutors are smart and professional when dealing with students' }
       ]
     };
-  }
+  },
+  methods: {
+    scrollToIndex(dotIndex) {
+      // GESTISCO L'INDICE DELLE DOTS 
+      const maxIndex = this.images.length - 1;
+      if (dotIndex === -1) {
+        this.currentIndex = maxIndex;
+      } else if (dotIndex === maxIndex + 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex = dotIndex;
+      }
+
+      // DICHIARO VARIABILI PER GESTIRE L'INDICE  IN FOCUS
+      const carouselContainer = this.$refs.carousel;
+      const testimonials = carouselContainer.querySelectorAll('.image-box');
+      const targetTestimonial = testimonials[this.currentIndex];
+      const containerWidth = carouselContainer.offsetWidth;
+      const testimonialWidth = targetTestimonial.offsetWidth;
+      const targetPosition = targetTestimonial.offsetLeft - (containerWidth - testimonialWidth) / 2;
+
+      // FUNZIONE PER LO SCROLL
+      carouselContainer.scrollTo({
+        left: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  },
+  
 };
 </script>
 
 <template>
  <section>
-  <div class="mt-5 mb-5 text-center">
+  <!-- **TESTO** -->
+    <div class="mt-5 mb-5 text-center">
       <h2 class="melody">Testimonials</h2>
       <h2>Why do people love me?</h2>
     </div>
+  <!-- ***SEZIONE SLIDER*** -->
   <div class="container-fluid">
-    <div class="carousel">
-      <div v-for="(card, index) in images"
-       :key="index" class="image-box" 
-       :class="{ 'current': index === currentIndex,
-       'adjacent': index === currentIndex - 1 || index === currentIndex + 1 || (currentIndex === 0 && index === images.length - 1)
-       || (currentIndex === images.length - 1 && index === 0),
-        }">
+    <div class="carousel" ref="carousel">
+      <!-- CICLO V-FOR CON CLASSI BINDATE PER GESTIRE IL FOCUS SUL CURRENT INDEX -->
+      <div v-for="(card, index) in images" :key="index" class="image-box" 
+       :class="{ 'current': index === currentIndex,'adjacent': index === currentIndex - 1 || index === currentIndex + 1 || (currentIndex === 0 && index === images.length - 1) || (currentIndex === images.length - 1 && index === 0),}">
         <div class="text-container">
           <h3 class="card-title">{{ card.alt }}</h3>
           <p class="card-description"> {{ card.text }}</p>
@@ -45,14 +74,12 @@ export default {
         <span class="role">/{{ card.role }}</span>
       </div>
     </div>
+    <!-- DOTS PER LA NAVIGAZIONE DELLO SLIDER -->
     <div class="navigation-dots">
-      <span
-        v-for="(dot, index) in images" 
-        :key="index" 
-        class="dot" 
-        :class="{ 'active': index === currentIndex }"
-        @click="currentIndex = index"
-      ></span>
+      <span v-for="(dot, index) in images" :key="index" class="dot" :class="{ 'active': index === currentIndex }"
+        @click="scrollToIndex(index)"
+        :data-index="index">
+      </span>
     </div>
   </div>
 </section>
@@ -65,14 +92,17 @@ section{
   margin-bottom: 5rem;
   padding-bottom: 2rem;
 }
+/* **STILE SLIDER** */
 .carousel {
   width: 100%;
   justify-content: space-around;
   margin: 0 auto;
   display: flex;
   flex-wrap: nowrap;
-  
-  overflow-x: auto;
+  gap: 45px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 50%;
+  overflow-x: hidden;
 }
 .image-box.current{
   opacity: 1;
@@ -80,19 +110,17 @@ section{
 .image-box.adjacent{
   opacity: 0.5;
 }
-.image-box.hidden{
-  display: none;
-}
 .image-box {
   background-color: #FFFFFF;
   overflow: hidden;
-  width: calc(98vw / 3);
+  width: calc(90vw / 3);
   height: 350px;
   text-align: left;
   position: relative;
   transition: opacity 0.3s;
   padding-left: 1.5rem;
   flex-shrink: 0;
+  scroll-snap-align: center;
 }
 .img-container {
   width: 70px;
@@ -120,6 +148,18 @@ section{
   font-size: 1em;
   color: black;
 }
+.role{
+  position: absolute;
+  bottom: 20px;
+  left:105px;
+  color: gray;
+}
+.name{
+  position: absolute;
+  bottom: 45px;
+  left: 105px;
+}
+/* STILE SEZIONE DOTS */
 .navigation-dots {
   display: flex;
   justify-content: center;
@@ -133,20 +173,14 @@ section{
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 1s;
 }
 .dot.active {
   background-color:black;
+  transform: scale(1.2);
 }
-.role{
-  position: absolute;
-  bottom: 20px;
-  left:105px;
-  color: gray;
-}
-.name{
-  position: absolute;
-  bottom: 45px;
-  left: 105px;
+.navigation-dots> .dot:nth-child(1),
+.navigation-dots > .dot:nth-child(6) {
+  display: none;
 }
 </style>
