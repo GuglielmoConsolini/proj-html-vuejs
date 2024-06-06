@@ -3,9 +3,14 @@ import img1 from '../assets/artist-testimonial-avatar-01.jpg';
 import img2 from '../assets/artist-testimonial-avatar-02.jpg';
 import img3 from '../assets/artist-testimonial-avatar-03.jpg';
 import img4 from '../assets/artist-testimonial-avatar-04.jpg';
+// IMPORTO IL PACCHETTO VUE-DRAGSCROLL
+import { dragscroll } from 'vue-dragscroll';
 
 export default {
   name: 'Carousel',
+  directives:{
+    dragscroll
+  },
   data() {
     return {
       currentIndex: 1,
@@ -59,7 +64,8 @@ export default {
     </div>
   <!-- ***SEZIONE SLIDER*** -->
   <div class="container-fluid">
-    <div class="carousel" ref="carousel">
+    <!-- Richiamo la direttiva v-dragacroll -->
+    <div class="carousel" ref="carousel" v-dragscroll>
       <!-- CICLO V-FOR CON CLASSI BINDATE PER GESTIRE IL FOCUS SUL CURRENT INDEX -->
       <div v-for="(card, index) in images" :key="index" class="image-box" 
        :class="{ 'current': index === currentIndex,'adjacent': index === currentIndex - 1 || index === currentIndex + 1 || (currentIndex === 0 && index === images.length - 1) || (currentIndex === images.length - 1 && index === 0),}">
@@ -72,6 +78,11 @@ export default {
         </div>
         <span class="name"> {{ card.name }}</span>
         <span class="role">/{{ card.role }}</span>
+        <div class="box-social">
+          <a href=""><i class="fa-brands fa-linkedin"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
+        </div>
       </div>
     </div>
     <!-- DOTS PER LA NAVIGAZIONE DELLO SLIDER -->
@@ -114,11 +125,12 @@ section{
   background-color: #FFFFFF;
   overflow: hidden;
   width: calc(90vw / 3);
-  height: 350px;
+  aspect-ratio: 1;
   text-align: left;
   position: relative;
   transition: opacity 0.3s;
-  padding-left: 1.5rem;
+  padding-left: 3.5rem;
+  padding-top: 3rem;
   flex-shrink: 0;
   scroll-snap-align: center;
 }
@@ -126,8 +138,8 @@ section{
   width: 70px;
   height: 70px;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 70px;
+  left: 50px;
 }
 .avatar {
   width: 100%;
@@ -138,26 +150,41 @@ section{
 
 }
 .text-container {
-  margin-bottom: 40px;
+  text-align: start;
 }
 .card-title {
-  font-size: 1.2em;
+  font-size: 1.5rem;
+  font-weight: bold;
   margin: 10px 0;
+  max-width: 85%;
 }
 .card-description {
-  font-size: 1em;
+  font-size: 1.1rem;
+  font-weight: bold;
   color: black;
+  max-width: 85%;
 }
 .role{
   position: absolute;
-  bottom: 20px;
-  left:105px;
+  bottom: 80px;
+  left:150px;
   color: gray;
 }
 .name{
   position: absolute;
-  bottom: 45px;
-  left: 105px;
+  bottom: 100px;
+  left: 150px;
+}
+.box-social{
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 90px;
+  right: 50px;
+}
+i{
+  font-size: 20px;
+  color: #1972F5;
 }
 /* STILE SEZIONE DOTS */
 .navigation-dots {

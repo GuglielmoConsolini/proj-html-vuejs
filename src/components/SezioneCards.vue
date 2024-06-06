@@ -64,7 +64,7 @@
   .shape-circle-white{
     position: absolute;
     right: -115px;
-    top: -100px;
+    top: -40px;
     z-index: 10;
   }
   .shape-rotate{
@@ -78,6 +78,7 @@
     position: absolute;
     z-index: 3;
     left: 0;
+    top: 80px;
   }
   .shape-circle-green{
     position: absolute;
@@ -99,15 +100,15 @@
     position: relative;
     width: 90%;
     margin: auto;
-    margin-top: 8rem;
+    margin-top: 5rem;
   }
   .d-flex.cards-box > .card-container:nth-child(2),
   .d-flex.cards-box > .card-container:nth-child(4) {
-    padding-top: 80px; 
+    padding-top: 70px; 
   }
   .d-flex.cards-box > .card-container:nth-child(1),
   .d-flex.cards-box > .card-container:nth-child(3) {
-    margin-bottom: 40px; 
+    margin-bottom: 50px; 
   }
 
 /* **FONT FAMILY IMPORTATO** */

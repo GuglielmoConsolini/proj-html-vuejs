@@ -15,7 +15,7 @@
       </kinesis-element>
     <!-- **CONTENITORE VIDEO YT** -->
     <div class="background-container">
-      <img class="logo" src="../assets/icon-youtube-play.png" alt="">
+      <a href="https://www.youtube.com/"><img class="logo" src="../assets/icon-youtube-play.png" alt=""></a>
     </div>
       <kinesis-element class="shape-circle-blue" :strenght="100" :originX="100" originY="200" >
         <img src="../assets/maxcoach-shape-12-150x150.png" alt="">
