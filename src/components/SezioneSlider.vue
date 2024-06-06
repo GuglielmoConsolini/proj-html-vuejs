@@ -17,7 +17,7 @@ export default {
       images: [
       { name: 'Mina Hollace', role: 'Freelance', src: img4, alt: 'High level of efficiency and scientific teaching methods', text: 'I am free to learn at my own pace, follow my own schedule and choose the subject I want to learn from the syllabus. Great study portal for people like me.' },
       { name: 'Madley Pondor', role: 'Freelance', src: img1, alt: 'Professional team of specialists and passionate mentor at reach', text: 'I need to get a certification for english profiency and MaxCoach is my best choice. Their tutors are smart and professional when dealing with students' },
-      { name: 'Florence Themes', role: 'Multimedia admin', src: img2, alt: 'it is a choice of quality for people with special needs ', text: 'I am a very strict person so i require everything to be organized and neat. then i will be able to do things right and shineo. MaxCoach guys just got me.' },
+      { name: 'Florence Themes', role: 'Multimedia admin', src: img2, alt: 'It is a choice of quality for people with special needs ', text: 'I am a very strict person so i require everything to be organized and neat. then i will be able to do things right and shineo. MaxCoach guys just got me.' },
       { name: 'Luvic Dubble', role: 'Private tutor', src: img3, alt: 'The MaxCoach team works really hard to ensure top quality', text: 'I am happy with their arrangment of lessons and subjects. They reflect a scientific investigation into effective methods to be adopted for learners of all levels.' },
       { name: 'Mina Hollace', role: 'Freelance', src: img4, alt: 'High level of efficiency and scientific teaching methods', text: 'I am free to learn at my own pace, follow my own schedule and choose the subject I want to learn from the syllabus. Great study portal for people like me.' },
       { name: 'Madley Pondor', role: 'IT Specialist', src: img1, alt: 'Professional team of specialists and passionate mentor at reach', text: 'I need to get a certification for english profiency and MaxCoach is my best choice. Their tutors are smart and professional when dealing with students' }
@@ -50,7 +50,7 @@ export default {
 <template>
  <section>
   <!-- **TESTO** -->
-    <div class="mt-5 mb-5 text-center">
+    <div class=" mb-5 text-center">
       <h2 class="melody">Testimonials</h2>
       <h2>Why do people love me?</h2>
     </div>
@@ -91,7 +91,7 @@ export default {
 <style scoped>
 section{
   background-color: #F5F5F5;
-  margin-top: 5rem;
+  
   margin-bottom: 5rem;
   padding-bottom: 2rem;
 }
@@ -151,7 +151,7 @@ section{
   max-width: 85%;
 }
 .card-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   color: black;
   max-width: 85%;

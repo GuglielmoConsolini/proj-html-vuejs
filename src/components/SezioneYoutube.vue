@@ -20,6 +20,9 @@
       <kinesis-element class="shape-circle-blue" :strenght="100" :originX="100" originY="200" >
         <img src="../assets/maxcoach-shape-12-150x150.png" alt="">
       </kinesis-element>
+      <kinesis-element class="shape-circle-blue2" :strenght="100" :originX="200" originY="200" >
+        <img src="../assets/maxcoach-shape-12-150x150.png" alt="">
+      </kinesis-element>
     </kinesis-container>
   </section>
 </template>
@@ -70,6 +73,11 @@ section {
   position: absolute;
   bottom: -60px;
   right: 200px;
+}
+.shape-circle-blue2{
+  position: absolute;
+  bottom: 20px;
+  left: 100px;
 }
 .shape-circle-white{
   position: absolute;
