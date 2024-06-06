@@ -24,7 +24,7 @@
 </script>
 
 <template>
-  <div class="container-fluid ps-5 mb-5">
+  <div class="container-fluid ps-5 mb-5 position-relative">
 
     <!-- ***IMMAGINI IN ABSOLUTE*** -->
     <div class="shape-corner">
@@ -64,7 +64,7 @@
   .shape-circle-white{
     position: absolute;
     right: -115px;
-    top: -40px;
+    top: 10px;
     z-index: 10;
   }
   .shape-rotate{
@@ -82,11 +82,11 @@
   }
   .shape-circle-green{
     position: absolute;
-    bottom: -100px;
+    bottom: -200px;
   }
   .shape-corner{
     position: absolute;
-    top: -40px;
+    top: -70px;
     right: -250px;
     transform: rotate(40deg);
   }

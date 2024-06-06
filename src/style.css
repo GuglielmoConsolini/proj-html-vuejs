@@ -8,3 +8,11 @@ body{
   font-family: roboto;
   overflow-x: hidden;
 }
+.my_img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.absolute{
+  position: absolute;
+}

@@ -27,15 +27,7 @@ export default {
   methods: {
     scrollToIndex(dotIndex) {
       // GESTISCO L'INDICE DELLE DOTS 
-      const maxIndex = this.images.length - 1;
-      if (dotIndex === -1) {
-        this.currentIndex = maxIndex;
-      } else if (dotIndex === maxIndex + 1) {
-        this.currentIndex = 0;
-      } else {
-        this.currentIndex = dotIndex;
-      }
-
+      this.currentIndex = dotIndex;
       // DICHIARO VARIABILI PER GESTIRE L'INDICE  IN FOCUS
       const carouselContainer = this.$refs.carousel;
       const testimonials = carouselContainer.querySelectorAll('.image-box');
@@ -177,7 +169,7 @@ section{
 }
 .box-social{
   display: flex;
-  gap: 5px;
+  gap: 8px;
   position: absolute;
   bottom: 90px;
   right: 50px;

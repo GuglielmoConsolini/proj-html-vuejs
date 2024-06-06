@@ -3,6 +3,8 @@ import SezioneCards from './components/SezioneCards.vue';
 import SezioneGetStarted from './components/SezioneGetStarted.vue';
 import SezioneYoutube from './components/SezioneYoutube.vue';
 import SezioneSlider from './components/SezioneSlider.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppCoursesShop from './components/AppCoursesShop.vue';
 export default {
 
   components: {
@@ -10,6 +12,8 @@ export default {
     SezioneGetStarted,
     SezioneYoutube,
     SezioneSlider,
+    AppHeader,
+    AppCoursesShop,
   },
   data() {
     return {
@@ -27,12 +31,13 @@ export default {
 </script>
 
 <template>
-    <Main>
-      <SezioneCards />
-      <SezioneGetStarted />
-      <SezioneYoutube />
-      <SezioneSlider />
-    </Main>
+  <AppHeader />
+  <SezioneCards />
+  <SezioneGetStarted />
+  <SezioneYoutube />
+  <SezioneSlider />
+  <AppCoursesShop />
+    
 </template>
 
 <style>
