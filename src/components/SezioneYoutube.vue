@@ -5,12 +5,12 @@
 <template>
   <section>
     <!-- **CONTENITORE KINESIS** -->
-    <kinesis-container :event="scroll" >
+    <kinesis-container >
       <!-- ELEMENTI KINESIS -->
-      <kinesis-element class="shape-circle-green"  :strenght="100" :originX="-300" originY="-200" :type="translate">
+      <kinesis-element class="shape-circle-green"  :strenght="100" :originX="-300" originY="-200">
         <img src="../assets/maxcoach-shape-05-150x150.png" alt="">
       </kinesis-element>
-      <kinesis-element class="shape-circle-white" :strenght="100" :originX="200" originY="200" :type="translate">
+      <kinesis-element class="shape-circle-white" :strenght="100" :originX="200" originY="200" >
         <img src="../assets/maxcoach-shape-13-150x150.png" alt="">
       </kinesis-element>
     <!-- **CONTENITORE VIDEO YT** -->

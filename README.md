@@ -1,7 +1,33 @@
-# Vue 3 + Vite
+SPIEGAZIONE PROGETTO ARTIST
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Recommended IDE Setup
+Sviluppatori: Guglielmo , Luciano , Massimiliano.
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+
+<--------Descrizione progetto------>
+
+L'obbiettivo è di ricreare il sito web di MaxCoach , un portale che offre una moltitudine di corsi 
+che variano fra classi che insegnano lingue , Fitness , Danza e tecniche artistiche. Il nostro progetto
+si concentra sulla parte artistica del sito.
+
+Divisione del lavoro:
+
+-Header e sezione OnlineCourses- Sviluppatore: Massimiliano
+
+-Main fino alla sezione Slider: Guglielmo
+
+-Footer e sezione blog : Luciano
+
+
+Summary della mia esperienza sul codice:
+
+Nella prima sezione che ho chiamato SezioneCards vado a generare con un ciclo v-for un componente figlio 
+di none Card.vue(con le props) così da far apparire 4 cards allineate. Ho gestito le immagine che popolano 
+il background con position absolute e z-index , mentre per gestire il movimento ho usato la libreria Kinesis.
+Il drag del Carosello funziona grazie alla libreria vue-dragscroll mentre il funzionamento vero e proprio lo 
+gestisco con le proprietà offsetWidth e offsetLeft e la funzione ScrollTo(x,y). Invece per gestire l'hover nella 
+sezione youtube ho usato lo pseuto selettore :before per far ingrandire solo il background e non il vero contenitore.
+
+Librerire e Framework utilizzati:
+
+Bootstrap - FontAwesome - Kinesis - Vue-Dragscroll
