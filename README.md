@@ -12,7 +12,7 @@ si concentra sulla parte artistica del sito.
 
 Divisione del lavoro:
 
--Header e sezione OnlineCourses- Sviluppatore: Massimiliano
+-Header e sezione OnlineCourses-  Massimiliano
 
 -Main fino alla sezione Slider: Guglielmo
 
