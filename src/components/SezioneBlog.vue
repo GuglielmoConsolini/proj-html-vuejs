@@ -35,7 +35,7 @@ export default {
             </div>
             <div class="blog2">
                 <div class="card2">
-                    <img src="../assets/artist-blog-02-500x680.jpg" alt="">
+                    <!-- <img src="../assets/artist-blog-02-500x680.jpg" alt=""> -->
                     <p style="color: white;">Artist</p>
                     <p style="color: white;">Lorem ipsum dolor sit amet.</p>
                 </div>
@@ -202,7 +202,7 @@ h5 {
 }
 
 .blog2 {
-    background-image: url(../assets/images/artist-blog-02-500x680.jpg);
+    background-image: url(../assets/artist-blog-02-500x680.jpg);
     width: 300px;
     height: 500px;
     padding: 6px;

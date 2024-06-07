@@ -41,6 +41,17 @@
   },
   created() {
     this.startTimer();
+     //Per l'effetto dell'Header che va position top 0 allo scroll verso il basso
+     window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("dropdown_section_container").style.top = "0";
+     }
+  else {
+    document.getElementById("dropdown_section_container").style.top = "35px";
+  }
+}
   },
   mounted() {
     
@@ -72,7 +83,7 @@
     </div>
 
     <!-- HEADER DROPDOWN SECTION -->
-    <div class="dropdown_section_container">
+    <div id="dropdown_section_container">
       <div class="dropdown_boxed_container">
 
         <figure class="logo_box m-0">
@@ -81,16 +92,16 @@
 
 
         <div class="dropdown_box">
-  
+
           <div class="dropdown">
             <button class="dropbtn">
               Home <span class="little_arrow">&#11167;</span>
             </button>
             <div class="big-dropdown-content">
               <div class="dropdown_items_box">
-                    <div><a class="dropdown-item" href="#">MaxCoach Education</a></div>
+                    <div><a class="dropdown-item" href="#">MaxCoach Education  <span class="hot_stick">Hot</span></a></div>
                     <div><a class="dropdown-item" href="#">Course Portal</a></div>
-                    <div><a class="dropdown-item" href="#">Distant Learning</a></div>
+                    <div><a class="dropdown-item" href="#">Distant Learning  <span class="hot_stick">Hot</span></a></div>
                     <div><a class="dropdown-item" href="#">Multimedia Pedagogy</a></div>
                     <div><a class="dropdown-item" href="#">Modern Schooling</a></div>
                     <div><a class="dropdown-item" href="#">Remote Training</a></div>
@@ -285,6 +296,12 @@
 
 <!-- STYLE -->
 <style scoped>
+   .headerOnScrollDown{
+      top: 0;
+    }
+    .headerOnScrollTop{
+      top: 35px;
+    }
     /* HEADER TIMER SECTION */
    .countdown_container{
     background-color: #F5F5F5;
@@ -321,13 +338,25 @@
 
    /* HEADER DROPDOWN SECTION */
 
+   #dropdown_section_container{
+    position: fixed;
+    z-index: 2000;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    top:35px;
+    transition: top 0.3s;
+   }
+
    .dropdown_boxed_container{
     width: 1200px;
     background-color: white;
     margin: auto;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 0 10px;
     position: relative;
     z-index: 999;
    }
